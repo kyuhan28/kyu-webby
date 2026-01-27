@@ -1,15 +1,123 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
+
+:root { --bg-color: #000; }
+
+html, body, #__next {
+	height: 100%;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	background: #000;
+	color: #fff;
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
 body {
-  background-color: #e3e9f2;
+	min-height: 100vh;
+	position: relative;
+	overflow-x: hidden;
+	background: radial-gradient(ellipse at center, #000 0%, #000 100%);
+}
+
+/* Stars layers */
+body::before,
+body::after {
+	content: "";
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	pointer-events: none;
+	z-index: 0;
+}
+
+/* Distant stars (slow drift) */
+body::before {
+	background-image:
+		radial-gradient(rgba(255,255,255,0.9) 1px, transparent 1px),
+		radial-gradient(rgba(255,255,255,0.7) 1px, transparent 1px),
+		radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px);
+	background-size: 300px 300px, 200px 200px, 500px 500px;
+	background-position: 0 0, 100px 50px, 200px 150px;
+	opacity: 0.9;
+	filter: blur(.2px);
+	animation: drift 200s linear infinite;
+}
+
+/* Near stars (twinkle) */
+body::after {
+	background-image:
+		radial-gradient(rgba(255,255,255,0.95) 0.9px, transparent 1px),
+		radial-gradient(rgba(255,255,255,0.85) 0.7px, transparent 1px),
+		radial-gradient(rgba(255,200,220,0.9) 1.4px, transparent 1px);
+	background-size: 120px 120px, 220px 220px, 360px 360px;
+	background-position: 40px 20px, 180px 80px, 300px 200px;
+	opacity: 0.95;
+	animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Keep page content above stars */
+body > * {
+	position: relative;
+	z-index: 1;
+}
+
+/* animations */
+@keyframes drift {
+	from { transform: translate3d(0,0,0); }
+	to   { transform: translate3d(1000px,-1000px,0); }
+}
+@keyframes twinkle {
+	0%   { opacity: 0.85; transform: scale(1); }
+	50%  { opacity: 1;    transform: scale(1.02); }
+	100% { opacity: 0.85; transform: scale(1); }
+}
+
+/* Small utility: make links visible on dark background */
+a { color: #9ae6b4; }
+a:hover { color: #c6f6d5; }
+
+/* Floating smooth rounded social tab */
+.social-tab {
+	position: fixed;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+	color: #fff;
+	padding: 10px 14px;
+	border-radius: 9999px;
+	box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+	backdrop-filter: blur(6px) saturate(120%);
+	-webkit-backdrop-filter: blur(6px) saturate(120%);
+	text-decoration: none;
+	transition: transform 160ms ease, box-shadow 160ms ease;
+	z-index: 2;
+}
+
+.social-tab:hover {
+	transform: translateY(-50%) scale(1.03);
+	box-shadow: 0 10px 30px rgba(0,0,0,0.65);
+}
+
+.social-tab .social-icon {
+	width: 24px;
+	height: 24px;
+	object-fit: contain;
+	border-radius: 6px;
+}
+
+.social-tab span {
+	font-weight: 600;
+	font-size: 14px;
 }
