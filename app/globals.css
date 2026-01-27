@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
 :root { --bg-color: #000; }
 
 html, body, #__next {
@@ -13,7 +15,7 @@ html, body {
 	padding: 0;
 	background: #000;
 	color: #fff;
-	font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	font-family: 'Bubblegum Sans', cursive;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -22,6 +24,7 @@ body {
 	min-height: 100vh;
 	position: relative;
 	overflow-x: hidden;
+	overflow-y: auto;
 	background: radial-gradient(ellipse at center, #000 0%, #000 100%);
 }
 
@@ -60,7 +63,7 @@ body::after {
 	background-size: 120px 120px, 220px 220px, 360px 360px;
 	background-position: 40px 20px, 180px 80px, 300px 200px;
 	opacity: 0.95;
-	animation: twinkle 3s ease-in-out infinite;
+	animation: twinkle 5s ease-in-out infinite;
 }
 
 /* Keep page content above stars */
@@ -86,13 +89,11 @@ a:hover { color: #c6f6d5; }
 
 /* Floating smooth rounded social tab */
 .social-tab {
-	position: fixed;
-	right: 20px;
-	top: 50%;
-	transform: translateY(-50%);
+	position: relative;
 	display: inline-flex;
 	align-items: center;
-	gap: 10px;
+	left: 44%;
+	gap: 15px;
 	background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
 	color: #fff;
 	padding: 10px 14px;
@@ -103,11 +104,30 @@ a:hover { color: #c6f6d5; }
 	text-decoration: none;
 	transition: transform 160ms ease, box-shadow 160ms ease;
 	z-index: 2;
+	margin: 10px;
 }
 
 .social-tab:hover {
-	transform: translateY(-50%) scale(1.03);
-	box-shadow: 0 10px 30px rgba(0,0,0,0.65);
+	transform: scale(1.03);
+	box-shadow: 0 10px 30px rgba(0,0,0,0.65), 0 0 20px rgba(255,255,255,0.3);
+}
+
+.social-tab-second {
+	margin-left: 0px;
+}
+
+.social-tab-second:hover {
+	transform: scale(1.03);
+	box-shadow: 0 10px 30px rgba(0,0,0,0.65), 0 0 20px rgba(255,255,255,0.3);
+}
+
+.social-tab-third {
+	margin-left: 0px;
+}
+
+.social-tab-third:hover {
+	transform: scale(1.03);
+	box-shadow: 0 10px 30px rgba(0,0,0,0.65), 0 0 20px rgba(255,255,255,0.3);
 }
 
 .social-tab .social-icon {
@@ -118,6 +138,113 @@ a:hover { color: #c6f6d5; }
 }
 
 .social-tab span {
-	font-weight: 600;
-	font-size: 14px;
+	font-weight: 700;
+	font-size: 38px;
+}
+
+/* Profile icon */
+.profile-icon {
+    position: relative;
+    top: auto;
+    left: auto;
+	right: auto;
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	object-fit: cover;
+	display: block;
+	margin: 80px auto 20px;
+	border: 3px solid rgba(255,255,255,0.3);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+	transition: transform 0.2s ease;
+}
+
+.profile-icon:hover {
+	transform: scale(1.05);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.5), 0 0 15px rgba(255,255,255,0.4);
+}
+
+/* Name textbox below the profile icon */
+.name-box {
+	position: relative;
+	padding: 8px 20px;
+	border-radius: 9999px;
+	color: #fff;
+	font-size: 36px;
+	font-weight: 700;
+	text-align: center;
+	margin: 0 auto 15px;
+	width: fit-content;
+	box-shadow: 0 8px 24px rgba(0,0,0,0.6), 0 0 18px rgba(255,255,255,0.06);
+	backdrop-filter: blur(6px) saturate(120%);
+	-webkit-backdrop-filter: blur(6px) saturate(120%);
+	z-index: 2;
+	font-family: 'Bubblegum Sans', cursive;
+	letter-spacing: 1px;
+}
+.subtitle-box {
+	position: relative;
+	padding: 8px 20px;
+	border-radius: 9999px;
+	color: #fff;
+	font-size: 36px;
+	font-weight: 700;
+	text-align: center;
+	margin: 0 auto 15px;
+	width: fit-content;
+	box-shadow: 0 8px 24px rgba(0,0,0,0.6), 0 0 18px rgba(255,255,255,0.06);
+	z-index: 2;
+	font-family: 'Bubblegum Sans', cursive;
+	letter-spacing: 1px;
+}
+
+.description-box {
+	position: relative;
+	padding: 8px 20px;
+	border-radius: 9999px;
+	color: #fff;
+	font-size: 36px;
+	font-weight: 700;
+	text-align: center;
+	margin: 0 auto 15px;
+	width: fit-content;
+	box-shadow: 0 8px 24px rgba(0,0,0,0.6), 0 0 18px rgba(255,255,255,0.06);
+	backdrop-filter: blur(6px) saturate(120%);
+	-webkit-backdrop-filter: blur(6px) saturate(120%);
+	z-index: 2;
+	font-family: 'Bubblegum Sans', cursive;
+	letter-spacing: 1px;
+}
+
+/* About Me Box */
+.about-me-box {
+	position: relative;
+	margin: 0px auto 20px;
+	padding: 24px 32px;
+	max-width: 800px;
+	border-radius: 20px;
+	background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+	color: #fff;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 0 20px rgba(255,255,255,0.08);
+	backdrop-filter: blur(8px) saturate(120%);
+	-webkit-backdrop-filter: blur(8px) saturate(120%);
+	z-index: 2;
+	font-family: 'Bubblegum Sans', cursive;
+	border: 1px solid rgba(255,255,255,0.1);
+}
+
+.about-me-box h2 {
+	margin: 0 0 12px 0;
+	font-size: 28px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.about-me-box p {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.6;
+	text-align: center;
+	color: rgba(255,255,255,0.9);
 }
