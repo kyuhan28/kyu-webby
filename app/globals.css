@@ -1,8 +1,119 @@
+/* Top Navigation Bar */
+.top-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 60px;
+	background: linear-gradient(180deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+	display: flex;
+	align-items: center;
+	padding: 0 24px;
+	z-index: 100;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.nav-link {
+	color: #dbdbdb;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 700;
+	font-family: 'Bubblegum Sans', cursive;
+	letter-spacing: 1px;
+	transition: color 160ms ease, transform 160ms ease;
+}
+
+.nav-link:hover {
+	color: #ffffff;
+	transform: scale(1.05);
+}
+
+.nav-link2 {
+	translate: 40px;
+	color: #dbdbdb;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 700;
+	font-family: 'Bubblegum Sans', cursive;
+	letter-spacing: 1px;
+	transition: color 160ms ease, transform 160ms ease;
+}
+
+.nav-link2:hover {
+	color: #ffffff;
+	transform: scale(1.05);
+}
+
+.nav-link3 {
+	translate: 80px;
+	color: #dbdbdb;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 700;
+	font-family: 'Bubblegum Sans', cursive;
+	letter-spacing: 1px;
+	transition: color 160ms ease, transform 160ms ease;
+}
+
+.nav-link3:hover {
+	color: #ffffff;
+	transform: scale(1.05);
+}
+
+.nav-link4 {
+	translate: 120px;
+	color: #dbdbdb;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 700;
+	font-family: 'Bubblegum Sans', cursive;
+	letter-spacing: 1px;
+	transition: color 160ms ease, transform 160ms ease;
+}
+
+.nav-link4:hover {
+	color: #ffffff;
+	transform: scale(1.05);
+}
+
+.nav-link5 {
+	translate: 160px;
+	color: #dbdbdb;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 700;
+	font-family: 'Bubblegum Sans', cursive;
+	letter-spacing: 1px;
+	transition: color 160ms ease, transform 160ms ease;
+}
+
+.nav-link5:hover {
+	color: #ffffff;
+	transform: scale(1.05);
+}
+
+.nav-link6 {
+	translate: 1000px;
+	color: #dbdbdb;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 700;
+	font-family: 'Bubblegum Sans', cursive;
+	letter-spacing: 1px;
+	transition: color 160ms ease, transform 160ms ease;
+}
+
+.nav-link6:hover {
+	color: #ffffff;
+	transform: scale(1.05);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
 
 :root { --bg-color: #000; }
 
@@ -25,6 +136,7 @@ body {
 	position: relative;
 	overflow-x: hidden;
 	overflow-y: auto;
+	padding-top: 60px;
 	background: radial-gradient(ellipse at center, #000 0%, #000 100%);
 }
 
@@ -247,4 +359,76 @@ a:hover { color: #c6f6d5; }
 	line-height: 1.6;
 	text-align: center;
 	color: rgba(255,255,255,0.9);
+}
+/* Section Styling */
+.section {
+	position: relative;
+	z-index: 1;
+	scroll-margin-top: 60px;
+	min-height: auto;
+}
+
+#home {
+	padding: 40px 20px 80px 20px;
+}
+
+#about, #portfolio, #experience, #contact {
+	padding: 80px 20px;
+}
+
+/* Content Box for sections */
+.content-box {
+	position: relative;
+	margin: 0 auto;
+	padding: 32px 40px;
+	max-width: 800px;
+	border-radius: 20px;
+	background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+	color: #fff;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 0 20px rgba(255,255,255,0.08);
+	backdrop-filter: blur(8px) saturate(120%);
+	-webkit-backdrop-filter: blur(8px) saturate(120%);
+	z-index: 2;
+	font-family: 'Bubblegum Sans', cursive;
+	border: 1px solid rgba(255,255,255,0.1);
+}
+
+.content-box h2 {
+	margin: 0 0 20px 0;
+	font-size: 32px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-align: center;
+	color: #9ae6b4;
+}
+
+.content-box p {
+	margin: 0 0 16px 0;
+	font-size: 16px;
+	line-height: 1.6;
+	color: rgba(255,255,255,0.9);
+	text-align: center;
+}
+
+.project-item, .experience-item {
+	margin: 20px 0;
+	padding: 16px;
+	background: rgba(255,255,255,0.05);
+	border-radius: 12px;
+	border-left: 3px solid #9ae6b4;
+}
+
+.project-item h3, .experience-item h3 {
+	margin: 0 0 8px 0;
+	font-size: 18px;
+	font-weight: 700;
+	color: #9ae6b4;
+	text-align: center;
+}
+
+.project-item p, .experience-item p {
+	margin: 0;
+	font-size: 14px;
+	color: rgba(255,255,255,0.8);
+	text-align: center;
 }
