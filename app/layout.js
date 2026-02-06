@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Kyu Han',
-  description: 'Created using the Vercel application.',
+  description: 'Hi, I am Kyu Han! I am a student at the University of Pittsburgh class of 2028.',
 }
 
 export default function RootLayout({ children }) {

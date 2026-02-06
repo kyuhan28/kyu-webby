@@ -66,7 +66,7 @@ export default function Home() {
       <section id="about" className="section">
         <div className="about-me-box">
           <h2>About Me</h2>
-          <p> more here</p>
+          <p>Hi, I'm Kyu Han! I am a student at the University of Pittsburgh class of 2028 majoring in Computer Science. I have a passion for web development and software engineering. But, with my current knowledge of Computer Science, this is all I can create as of now. My passion and knowledge will keep growing over time, so will the projects. I mark this the start of my software journey!</p>
         </div>
       </section>
 
@@ -76,7 +76,7 @@ export default function Home() {
           <h2>Portfolio</h2>
           <p>description here</p>
           <div className="project-item">
-            <h3>Deployed a Website with Vercel</h3>
+            <h3>Mental Awareness-Focused Interactive Experience</h3>
             <p>more here</p>
           </div>
           <div className="project-item">
@@ -94,13 +94,13 @@ export default function Home() {
       <section id="experience" className="section">
         <div className="content-box">
           <h2>Experience</h2>
-          <p>fun stuff</p>
+          <p>Here are a list of my experiences that help me develop skills in software engineering.</p>
           <div className="experience-item">
-            <h3>non</h3>
+            <h3>Hackathons</h3>
             <p>none yet</p>
           </div>
           <div className="experience-item">
-            <h3>none</h3>
+            <h3>something yet to happen here...</h3>
             <p>none yet</p>
           </div>
         </div>
@@ -110,9 +110,9 @@ export default function Home() {
       <section id="hobbies" className="section">
         <div className="content-box">
           <h2>Personal Hobbies</h2>
-          <p>desc here</p>
+          <p>Here are activites I enjoy doing outside of Computer Science!</p>
           <div className="experience-item">
-            <h3>none</h3>
+            <h3>Taekwondo Club</h3>
             <p>none yet</p>
           </div>
           <div className="experience-item">
